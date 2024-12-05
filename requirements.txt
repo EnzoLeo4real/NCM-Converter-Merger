@@ -1,0 +1,10 @@
+# 基础依赖
+tqdm>=4.65.0
+pycrypto>=2.6.1
+
+# 可选依赖 (用于音频文件拼接功能)
+# 注意: ffmpeg 需要通过系统包管理器安装，而不是 pip
+# 例如:
+# Ubuntu/Debian: sudo apt-get install ffmpeg
+# macOS: brew install ffmpeg
+# Windows: 从 https://ffmpeg.org/download.html 下载并配置环境变量 
