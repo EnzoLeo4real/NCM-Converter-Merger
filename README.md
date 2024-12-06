@@ -1,10 +1,10 @@
-# pyNCMDUMP
+# NCM-Converter-Merger
 
 ## 项目背景
 
-这是一个基于 [anonymous5l/ncmdump](https://github.com/anonymous5l/ncmdump) 的二次开发项目。原项目实现了将网易云音乐的加密 `.ncm` 文件转换为普通音频格式（如 `flac` 和 `mp3`）的功能。
+这是一个基于 [anonymous5l/ncmdump](https://github.com/anonymous5l/ncmdump) 和[allenfrostline/pyNCMDUMP](https://github.com/allenfrostline/pyNCMDUMP)的二次开发项目。原项目实现了将网易云音乐的加密 `.ncm` 文件转换为普通音频格式（如 `flac` 和 `mp3`）的功能。
 
-在此基础上，本项目添加了音频文件拼接功能，可以将转换后的多个音频文件合并为单个 `.flac` 文件。这个新功能主要是为了方便音乐电台博主制作 Playlist 歌单视频：当需要为完整歌单制作音频频谱动画时，使用合并后的单个音频文件会比处理多个单曲文件更加高效。
+在此基础上，本项目添加了音频文件拼接功能，可以将转换后的多个音频文件合并为单个 `.flac` 文件。这个新功能主要是为了方便音乐电台博主制作 Playlist 歌单视频：当需要为完整歌单制作音频频谱动画时，使用合并后的单个音频文件会比处理多个单曲文件更加高效。B站Playlist歌单视频参考频道：https://www.bilibili.com/video/BV1iXzZYcE7a/?spm_id_from=333.1387.homepage.video_card.click&vd_source=7cb66437a25651c06c65f0140cd884bb。
 
 ## 主要功能
 
@@ -61,7 +61,7 @@ $ python ncmdump.py A b.ncm
                                                                                                  |___/                                                     
                                           NCM-Converter-Merger                     
                         https://github.com/EnzoLeo4real/NCM-Converter-Merger.git  
-使用单进程模式运行pyNCMDUMP
+使用单进程模式运行NCM-Converter-Merger
   // ... 转换过程输出 ...
 所有操作已完成
 ```
@@ -72,7 +72,7 @@ $ python ncmdump.py A b.ncm
 $ python ncmdump.py A b.ncm --workers 4
 
   // ... 程序头部输出 ...
-使用4个并行进程运行pyNCMDUMP
+使用4个并行进程运行NCM-Converter-Merger
   // ... 转换过程输出 ...
 所有操作已完成
 ```
@@ -83,7 +83,7 @@ $ python ncmdump.py A b.ncm --workers 4
 $ python ncmdump.py A b.ncm -m -o combined.flac
 
   // ... 程序头部输出 ...
-使用单进程模式运行pyNCMDUMP
+使用单进程模式运行NCM-Converter-Merger
   // ... 转换过程输出 ...
 成功拼接文件到: "combined.flac"
 所有操作已完成
@@ -93,6 +93,7 @@ $ python ncmdump.py A b.ncm -m -o combined.flac
 
 ```
 $ python ncmdump.py A b.ncm -w 4 -m -o combined.flac
+$ 示例：python .\ncmdump.py D:\Is\your\path -w 5 -m -o D:\is\your\path\playlist001.flac
 ```
 
 ## 注意事项
@@ -107,6 +108,7 @@ $ python ncmdump.py A b.ncm -w 4 -m -o combined.flac
 ## 致谢
 
 - 感谢 [anonymous5l](https://github.com/anonymous5l) 编写的原始版本 [ncmdump](https://github.com/anonymous5l/ncmdump) (C++版本)
+- 感谢 [allenfrostline](https://github.com/allenfrostline)编写的python版本[pyNCMDUMP](https://github.com/allenfrostline/pyNCMDUMP).(python版本)
 - 感谢 [ffmpeg](https://ffmpeg.org/) 提供的强大音频处理功能
 
 ## 许可证
